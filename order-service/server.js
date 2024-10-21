@@ -19,14 +19,14 @@ app.post('/purchase', async (req, res) => {
 
     try {
         // Call catalog service to check book information (including stock)
-        const response = await axios.get(`http://localhost:3000/info/${bookId}`);
+        const response = await axios.get(`http://catalog-service:3000/info/${bookId}`);
         const book = response.data;
 
         // Check if there is enough stock
         if (book.stock >= quantity) {
             // If stock is sufficient, decrement the stock
             const newStock = book.stock - quantity;
-            await axios.put(`http://localhost:3000/update/${bookId}`, {
+            await axios.put(`http://catalog-service:3000/update/${bookId}`, {
                 title: book.title,
                 stock: newStock,
                 cost: book.cost,
