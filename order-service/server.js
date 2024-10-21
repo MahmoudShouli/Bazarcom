@@ -49,7 +49,7 @@ app.post('/purchase', async (req, res) => {
             res.status(400).json({ error: "Not enough stock available" });
         }
     } catch (error) {
-        console.error("Error:", error); // Log the error
+        console.error("Error:", error); // Logging
         res.status(500).json({ error: "Error interacting with catalog service" });
     }
 });
