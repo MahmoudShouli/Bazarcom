@@ -33,6 +33,31 @@ app.get('/info/:id', (req, res) => {
     });
 });
 
+
+// PUT request to update a book
+app.put('/update/:id', (req, res) => {
+    const id = req.params.id;
+    const { title, stock, cost, topic } = req.body;
+
+    // SQL query to update the book
+    const sql = `
+        UPDATE books 
+        SET title = ?, stock = ?, cost = ?, topic = ? 
+        WHERE id = ?
+    `;
+
+    db.run(sql, [title, stock, cost, topic, id], function (err) {
+        if (err) {
+            return res.status(500).send(err.message);
+        }
+        if (this.changes === 0) {
+            return res.status(404).send('Book not found');
+        }
+        res.send(`Book with ID ${id} updated successfully`);
+    });
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
