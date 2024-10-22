@@ -1,0 +1,28 @@
+version: '3'
+services:
+  catalog-service:
+    build: ./catalog-service
+    container_name: catalog-service
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./catalog-service/database.db:/usr/src/app/database.db
+    networks:
+      - bazar-network
+
+  order-service:
+    build: ./order-service
+    container_name: order-service
+    ports:
+      - "4000:4000"
+    depends_on:
+      - catalog-service
+    volumes:
+      - ./order-service/database.db:/usr/src/app/database.db
+    networks:
+      - bazar-network
+
+
+networks:
+  bazar-network:
+    driver: bridge
