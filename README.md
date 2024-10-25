@@ -7,7 +7,7 @@
 
 - the project structure looks like this : 
 
-  ![Alt text](imgs/structure.png)
+  ![Alt text](imgs/cat.png)  ![Alt text](imgs/ord.png)  ![Alt text](imgs/gate.png) 
 
 ## Tech
 - NodeJS runtime and ExpressJS web framework.
