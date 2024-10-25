@@ -63,6 +63,8 @@ cd Bazarcom
 
 * If it doesn't work go over the steps again and make sure you did everything right, make sure you have Node , WSL , and Docker installed, and more importantly make sure you are in the same directory as the docker-compose.yml file.
 
+## Output
+- You can find the output in the docs directory.
 
 
    
