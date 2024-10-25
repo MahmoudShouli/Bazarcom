@@ -29,3 +29,33 @@
 
 
 ## Running The App
+1. Clone the repository into your local machine on VSCode.
+ ```bash
+git clone https://github.com/MahmoudShouli/Bazarcom.git
+cd Bazarcom
+```
+
+2. Make sure to install WSL and Docker Desktop on your machine.
+
+3. Make sure you are in the repo directory.
+
+4. Open VSCode Terminal
+
+5. Type :
+ ```bash
+   docker-compose up
+ ```
+
+6. Now if everything works fine you should see something like this :
+
+    ![Alt text](imgs/servicesRunning.png)
+
+
+7. Naviagte to http://localhost:3002/ and the Bazar web page should appear.
+
+
+
+
+
+
+   
