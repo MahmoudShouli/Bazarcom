@@ -34,24 +34,25 @@
 git clone https://github.com/MahmoudShouli/Bazarcom.git
 cd Bazarcom
 ```
+2. If the database.db files are empty, go to the /catalog-service/database.js and uncomment from line 14 to line 62 and /order-service/database.js from line 14 to 29. But after that comment them again when you run the app.
 
-2. Make sure to install WSL and Docker Desktop on your machine.
+3. Make sure to install WSL and Docker Desktop on your machine.
 
-3. Make sure you are in the repo directory.
+4. Make sure you are in the repo directory.
 
-4. Open VSCode Terminal
+5. Open VSCode Terminal
 
-5. Type :
+6. Type :
  ```bash
    docker-compose up
  ```
 
-6. Now if everything works fine you should see something like this :
+7. Now if everything works fine you should see something like this :
 
     ![Alt text](imgs/servicesRunning.png)
 
 
-7. Naviagte to http://localhost:3002/ and the Bazar web page should appear.
+8. Naviagte to http://localhost:3002/ and the Bazar web page should appear.
 
 
 
