@@ -55,7 +55,7 @@ cd Bazarcom
 
 7. Now if everything works fine you should see something like this :
 
-    ![Alt text](imgs/servicesRunning.png)
+    ![Alt text](../imgs/servicesRunning.png)
 
 
 8. Naviagte to http://localhost:3002/ and the Bazar web page should appear.
