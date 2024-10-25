@@ -47,16 +47,16 @@
             const topic = document.getElementById('search-topic').value;
             const response = await fetch(`/search/${topic}`);
             const data = await response.json();
-            document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+            displayResults(data);
         }
-
+    
         async function getItemInfo() {
             const id = document.getElementById('item-id').value;
             const response = await fetch(`/info/${id}`);
             const data = await response.json();
-            document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+            displayResults([data]); // Wrapping in an array for consistent formatting
         }
-
+    
         async function purchaseItem() {
             const id = document.getElementById('purchase-id').value;
             const quantity = document.getElementById('quantity').value;
@@ -68,6 +68,33 @@
             const data = await response.json();
             document.getElementById('output').textContent = JSON.stringify(data, null, 2);
         }
+    
+        function displayResults(items) {
+            const output = document.getElementById('output');
+            output.innerHTML = ''; // Clear previous results
+            
+            const formattedList = document.createElement('pre');
+            formattedList.style.fontFamily = 'monospace';
+            formattedList.style.background = '#f5f5f5';
+            formattedList.style.padding = '10px';
+            formattedList.style.borderRadius = '5px';
+            
+            let formattedText = '[\n';
+            items.forEach((item, index) => {
+                formattedText += `    {\n`;
+                formattedText += `        "id": ${item.id},\n`;
+                formattedText += `        "title": "${item.title}",\n`;
+                formattedText += `        "stock": ${item.stock},\n`;
+                formattedText += `        "cost": ${item.cost},\n`;
+                formattedText += `        "topic": "${item.topic}"\n`;
+                formattedText += `    }${index < items.length - 1 ? ',' : ''}\n`;
+            });
+            formattedText += ']';
+    
+            formattedList.textContent = formattedText;
+            output.appendChild(formattedList);
+        }
     </script>
+    
 </body>
 </html>
