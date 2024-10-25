@@ -6,11 +6,12 @@ const db = require('./database');
 const app = express();
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3001;
 
 // Post request for Purchase 
-app.post('/purchase', async (req, res) => {
-    const { bookId, quantity } = req.body;
+app.post('/purchase/:id', async (req, res) => {
+    const  bookId  = req.params.id;
+    const { quantity } = req.body;
 
     // Input validation
     if (!bookId || quantity <= 0) {
@@ -55,5 +56,5 @@ app.post('/purchase', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}..`);
 });
