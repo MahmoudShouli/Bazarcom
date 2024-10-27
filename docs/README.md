@@ -49,7 +49,7 @@ cd Bazarcom
 
 6. Type :
  ```bash
-   docker-compose up
+   docker-compose up --build
  ```
 
 
