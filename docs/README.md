@@ -7,7 +7,7 @@
 
 - the project structure looks like this : 
 
-  ![Alt text](imgs/cat.png)  ![Alt text](imgs/ord.png)  ![Alt text](imgs/gate.png) 
+  ![Alt text](../imgs/cat.png)  ![Alt text](../imgs/ord.png)  ![Alt text](../imgs/gate.png) 
 
 ## Tech
 - NodeJS runtime and ExpressJS web framework.
@@ -49,13 +49,13 @@ cd Bazarcom
 
 6. Type :
  ```bash
-   docker-compose up
+   docker-compose up --build
  ```
 
 
 7. Now if everything works fine you should see something like this :
 
-    ![Alt text](imgs/servicesRunning.png)
+    ![Alt text](../imgs/servicesRunning.png)
 
 
 8. Naviagte to http://localhost:3002/ and the Bazar web page should appear.
@@ -63,6 +63,8 @@ cd Bazarcom
 
 * If it doesn't work go over the steps again and make sure you did everything right, make sure you have Node , WSL , and Docker installed, and more importantly make sure you are in the same directory as the docker-compose.yml file.
 
+## Output
+- You can find the output in the docs directory.
 
 
    
