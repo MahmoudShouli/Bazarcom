@@ -30,6 +30,8 @@ services:
     depends_on:
       - catalog-service
       - order-service
+    volumes:
+      - ./middleware:/usr/src/app/middleware
     networks:
       - bazar-network
 

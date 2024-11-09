@@ -2,11 +2,13 @@ const express = require('express');
 const path = require('path');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const { responseTimeMiddleware } = require('./middleware/responseTime');
 
 const app = express();
 const PORT = process.env.PORT || 3002;
 
 app.use(bodyParser.json());
+app.use(responseTimeMiddleware);
 app.use(express.static(path.join(__dirname, 'views')));
 
 // Endpoint to serve the HTML page
