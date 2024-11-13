@@ -52,8 +52,8 @@ app.get('/search/:topic', async (req, res) => {
     }
 
     try {
-        const catalogServer = getNextCatalogServer();
-        const response = await axios.get(`http://${catalogServer}:3000/search/${topic}`);
+        // const catalogServer = getNextCatalogServer();
+        const response = await axios.get(`http://catalog-service:3000/search/${topic}`);
         cache.set(topic, response.data);
         console.log("Cache miss for topic : ", topic)
         console.log("response returned from : ", catalogServer)
@@ -77,8 +77,8 @@ app.get('/info/:id', async (req, res) => {
 
 
     try {
-        const catalogServer = getNextCatalogServer();
-        const response = await axios.get(`http://${catalogServer}:3000/info/${id}`);
+        // const catalogServer = getNextCatalogServer();
+        const response = await axios.get(`http://catalog-service:3000/info/${id}`);
         cache.set(id, response.data);
         console.log("Cache miss for book with id : ", id)
         console.log("response returned from : ", catalogServer)
@@ -92,8 +92,8 @@ app.get('/info/:id', async (req, res) => {
 app.post('/purchase/:id', async (req, res) => {
     const { quantity } = req.body;
     try {
-        const orderServer = getNextOrderServer();
-        const response = await axios.post(`http://${orderServer}:3001/purchase/${req.params.id}`, { quantity });
+        // const orderServer = getNextOrderServer();
+        const response = await axios.post(`http://order-service:3001/purchase/${req.params.id}`, { quantity });
         res.json(response.data);
         console.log("response returned from : ", orderServer)
     } catch (error) {
