@@ -63,6 +63,8 @@ app.get('/search/:topic', async (req, res) => {
 
     let service; 
 
+    let service; 
+
     try {
         const result = getNextService(catalogServices, catalogServiceIndex);
         service = result.service;
